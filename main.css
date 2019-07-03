@@ -1,6 +1,17 @@
 html {
   height: 100%;
 }
+
+body {
+  font-family: 'Nunito';
+  letter-spacing: 0.03em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 80px; /* same as footer's height */
+}
+
 .navbar {
   padding: 1rem 0 1rem 0;
   margin: 0 0 1rem 0;
@@ -31,25 +42,6 @@ html {
   }
 }
 
-body {
-  font-family: 'Nunito';
-  letter-spacing: 0.03em;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  position: relative;
-  min-height: 100%;
-  padding-bottom: 80px; /* same as footer's height */
-}
-
-a {
-  color: ;
-}
-
-a:focus, a:hover {
-  text-decoration: none;
-  /* color: ; */
-}
-
 a.bl {
   color: black;
 }
@@ -60,6 +52,26 @@ a.bl:hover {
 
 .bg-black  {
   background-color: #1a1818 !important;
+}
+
+
+div.about {
+  border-bottom: 1px solid rgb(235,235,235);
+  /* margin-top: 1rem; */
+  padding: 1rem;
+}
+
+div.about h1 {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+div.about-card {
+  margin: 1rem 1rem 2rem 1rem;
+}
+
+div.about-card h6 {
+  opacity: 0.50;
 }
 
 footer {
