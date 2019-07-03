@@ -57,8 +57,8 @@ a.bl:hover {
 
 div.about {
   border-bottom: 1px solid rgb(235,235,235);
-  /* margin-top: 1rem; */
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
 }
 
 div.about h1 {
