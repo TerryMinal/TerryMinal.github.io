@@ -35,6 +35,9 @@ body {
   padding: 3rem;
 }
 
+.project-row h6 {
+  font-style: italic;
+}
 
 @media (min-width: 992px) {
   .projects-section .project-row .project-text {
@@ -70,11 +73,11 @@ div.about-card {
   margin: 1rem 1rem 2rem 1rem;
 }
 
-div.about-card .subheader {
-  text-decoration: underline;
+div.about-card .header {
+  /* text-decoration: underline; */
 }
 
-div.about-card h6 {
+div.about-card .subheader {
   opacity: 0.80;
 }
 
@@ -83,12 +86,19 @@ div.about-card ul {
 }
 
 div.about-card li {
-  margin: 10px;
+  margin: 10px 0 10px 0;
 }
 
 div.about-card .about-card-date {
     font-style: italic;
     opacity: 0.50;
+}
+
+iframe {
+  overflow: hidden;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
