@@ -113,6 +113,7 @@ div.reference ul li:before {
 div.reference ul li {
   margin: 0.5em;
   background-color: #FFFEFC;
+  word-wrap: break-word;
 }
 
 a.inline-citation {
