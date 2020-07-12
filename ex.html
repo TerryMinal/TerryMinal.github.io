@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="temp.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" >
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head> 
+        
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand brand" href="#">TANVI DESHMUKH</a> 
+        <!-- navbar menu when in mobile devices -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- navbar content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">POSTS</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </nav>    
+
+
+    <div class="container title-section">
+        <div clas="row"> 
+            <h1>  Photoacoustic Mathematical Model </h1>
+        </div>
+        <div clas="row"> 
+            <h2>Week 6 </h2>
+        </div>
+        <div clas="row"> 
+            <p class="date"> June 22, 2020 </p>
+            <i class="fa fa-clock-o" aria-hidden="true"></i> 4 minute read
+        </div>
+    </div> 
+    <div class="container section-wrapper"> 
+        <div class="row section">
+            <!-- <h2> Header </h2> -->
+            <p> 
+                The main focus of this week was to develop a mathematical model to verify (or challenge) 
+                the results that we have been receiving from the photoacoustic model. We also made some 
+                changes to the laser heating model from before to incorporate more of a mesh-link structure.             </p>
+        </div>
+        <div class="row section">
+            <h2> Bending of Diaphragm </h2>
+            <p> 
+                We treat the diaphragm as a thin, clamped plate.
+                If the diaphragm was free, the magnitude of thermal expansion would be:
+                which translates to a thermal stress of:
+                Using the solutions for clamped plates presented in 
+                <a href="https://bayanbox.ir/view/1449796995868305459/theory-of-plates-and-shells-Timoshenko-small-size.pdf" data-toggle="tooltip" data-html="true" title="Theory of Plates and Shells: https://bayanbox.ir/view/1449796995868305459/theory-of-plates-and-shells-Timoshenko-small-size.pdf"> [1] </a> 
+                , the displacement function is derived to be:
+                where the deflection at the edge of the plate is 0, and the maximum displacement occurs at the center of the plate:
+                This displacement is smaller than anticipated and also smaller than the displacement from the initial laser heating results. One reason for this may be our initial estimate for the thermal stress, and other methods to calculate this stress include utilizing Mitchell’s equations or the displacement potential function.             </p>
+        </div>
+        <div class="row section">
+            <h2>  Updates to the Laser Heating Model  </h2>
+            <p>
+                The laser heating model was updated to include a more mesh-like structure: </p>
+                    <img class="mx-auto d-block"" src="resources/Mesh.png"> </img>
+            <p> 
+                The vibrations from this are slightly larger than the vibrations of the initial 
+                model, \(10^{-9} \) m vs \( 10^{-10}\) m. This may be attributed to more heat leaving the model due to the presence of 
+                heat transfer in air. However, one concern from this model is that we expect circular 
+                symmetry of vibrations, and this is no longer present after altering the model.
+                Additional improvements planned to make the laser heating model more accurate include 
+                adding springs along the edges. This would allow for slight horizontal movement of the 
+                membrane in addition to the current vertical movement and oscillatory behavior.             
+            </p>
+            <p>
+                Additional improvements planned to make the laser heating model more 
+                accurate include adding springs along the edges. This would allow for 
+                slight horizontal movement of the membrane in addition to the current 
+                vertical movement and oscillatory behavior.
+            </p>
+        </div>
+        <div class="row section">
+            <h2>  Weekly Article  </h2>
+            <p> 
+                Trick or Heat? Manipulating Critical Temperature-Based Control Systems 
+                Using Rectification Attacks 
+                <a href="https://dl.acm.org/doi/10.1145/3319535.3354195" data-toggle="tooltip" data-html="true" title="Trick or Heat? Manipulating Critical Temperature-Based Control Systems Using Rectification Attacks: https://dl.acm.org/doi/10.1145/3319535.3354195"> [2] </a> 
+                exploited the rectification effect in 
+                amplifiers to attack temperature sensors. Op-amps require a DC bias to operate
+                 correctly, but if a high frequency sine wave is injected into the amplifier, 
+                 its amplification can result in a DC offset error. To minimize this error, 
+                 it is best to suppress external noises; however, this attack exploits sensors 
+                 that have not used noise suppression controls in their circuits. 
+                 Temperature sensor attacks from this paper have been found to affect infant incubators 
+                 and laboratory equipment.
+            </p>
+            <p> 
+                An interesting defense explained in the paper is the hardware anomaly detection system
+                for devices where it is not possible to establish a filter for external noises. 
+                By introducing a superheterodyne receiver into the circuit before the amplifier, you can 
+                convert the received signal to intermediate frequency rather than high frequency, 
+                and this effectively suppresses the DC offset. Additionally, this component can be periodically
+                activated only when temperature measurements are actually required.
+            </p>
+        </div>
+
+        <div class="reference">
+            <h2> References </h2>
+            <ul class="list-group"> 
+                <li>Theory of Plates and Shells: https://bayanbox.ir/view/1449796995868305459/theory-of-plates-and-shells-Timoshenko-small-size.pdf </li>
+                <li>Trick or Heat? Manipulating Critical Temperature-Based Control Systems Using Rectification Attacks: https://dl.acm.org/doi/10.1145/3319535.3354195</li>
+                <li>Ghost Talk: Mitigating EMI Signal Injection Attacks against Analog Sensors https://spqrlab1.github.io/papers/fookune-emi-oakland13.pdf/li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <div class="container footer"> 
+        <div class="row justify-content-center"> 
+                <i class="fa fa-facebook fa-2x" ></i>
+                <i class="fa fa-twitter fa-2x" ></i>
+                <i class="fa fa-envelope fa-2x" ></i>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+</html>
+
+<!-- tooltip example -->
+<!-- <a class="inline-citation" data-toggle="tooltip" title="" data-original-title=""> [1] </a>  -->

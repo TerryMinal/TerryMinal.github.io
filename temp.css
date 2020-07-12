@@ -1,0 +1,133 @@
+body {
+  font: 100% Georgia, serif;
+  color: #333;
+  background-color: #FFFEFC;
+}
+
+img {
+  border-radius: 10px;
+}
+
+nav {
+  background-color: #FFFEFC;
+  border-bottom: 1px solid #D3D8D9;
+}
+nav a.brand {
+  font: Lucida Console;
+  font-weight: bold;
+}
+
+div.title-section {
+  margin-top: 4em;
+  margin-bottom: 4em;
+  position: relative;
+  max-width: 800px;
+}
+div.title-section h1 {
+  font-weight: 100;
+  font-size: 300%;
+}
+div.title-section p.author {
+  font-weight: 600;
+  font-size: medium;
+  margin-bottom: 10px;
+}
+div.title-section p.date {
+  margin-bottom: 4px;
+}
+
+div.section-wrapper {
+  position: relative;
+  max-width: 800px;
+}
+div.section-wrapper:before, div.section-wrapper:after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 15px;
+  box-shadow: -15px 0 15px -28px inset;
+}
+div.section-wrapper:before {
+  left: -15px;
+}
+div.section-wrapper:after {
+  right: -15px;
+}
+
+div.section, div.reference {
+  margin-top: 1em;
+  line-height: 1.5;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+div.section:after, div.reference:after {
+  content: "";
+  display: block;
+  /* This will put the pseudo element on its own line. */
+  width: 50%;
+  margin: 0 auto;
+  /* what does this mean */
+  margin-top: 1em;
+  margin-bottom: 2em;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+div.section h2, div.reference h2 {
+  /* margin-bottom: 10px; */
+  font-weight: 500;
+  /* font-style: oblique; */
+}
+div.section h2:after, div.reference h2:after {
+  content: "";
+  display: block;
+  /* This will put the pseudo element on its own line. */
+  width: 35%;
+  padding-top: 8px;
+  border-bottom: 3px solid #4287f5;
+}
+div.section p, div.reference p {
+  font-size: 1.25rem;
+}
+div.section img, div.reference img {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+div.section a:hover, div.reference a:hover {
+  color: #4287f5;
+}
+div.reference h2:after {
+  width: 10%;
+}
+div.reference ul {
+  counter-reset: ref;
+  list-style-type: none;
+  color: #131313;
+}
+div.reference ul li:before {
+  counter-increment: ref;
+  content: "[" counter(ref) "] ";
+}
+div.reference ul li {
+  margin: 0.5em;
+}
+
+a.inline-citation {
+  vertical-align: super;
+  font-size: small;
+}
+a.inline-citation:link {
+  color: grey;
+}
+
+div.footer {
+  position: relative;
+  max-width: 800px;
+}
+div.footer i {
+  margin: 1em;
+}
+
+/*# sourceMappingURL=temp.css.map */
