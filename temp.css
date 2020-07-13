@@ -119,17 +119,32 @@ div.reference ul li {
 a.inline-citation {
   vertical-align: super;
   font-size: small;
-}
-a.inline-citation:link {
   color: grey;
 }
 
 div.footer {
   position: relative;
+  color: inherit;
   max-width: 800px;
+  text-decoration: none;
 }
 div.footer i {
   margin: 1em;
+}
+div.footer a {
+  margin: 1em;
+}
+div.footer a:hover {
+  text-decoration: inherit;
+  opacity: 0.8;
+}
+div.footer a:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+div.footer a:visited {
+  text-decoration: inherit;
+  color: inherit;
 }
 
 /*# sourceMappingURL=temp.css.map */
